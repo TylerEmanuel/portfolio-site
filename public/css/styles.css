@@ -1,0 +1,599 @@
+:root {
+    --main-bg-color: white;
+    --secondary-bg-color: #008cff;
+    --mobile-viewport-notch-bg: rgb(72, 72, 72);
+
+    --main-text-color: rgb(72, 72, 72);
+    --secondary-text-color: white;
+
+    --dot-color: #008cff;
+    --dot-shadow: white;
+    --dot-shadow--hover: #0062B9;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    /* sets background color and padding for mobile viewport notch */
+    background-color: var(--mobile-viewport-notch-bg);
+    padding: env(safe-area-inset);
+    /***/
+}
+
+body {
+    margin: 0;
+    color: var(--main-text-color);
+    font-family: 'Manrope', sans-serif;
+}
+
+p {
+    line-height: 1.8;
+    letter-spacing: .5px;
+    margin-top: 0;
+}
+
+p:last-of-type {
+    margin-bottom: 0;
+}
+
+input,
+textarea,
+button {
+    font-family: 'Manrope', sans-serif;
+}
+
+/****** 
+SECTION
+******/
+.section {
+    width: 100%;
+    min-width: 320px;
+}
+
+.section--intro {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -1.5px;
+    white-space: nowrap;
+    padding: 1em;
+}
+
+.section--intro,
+.section--about {
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+}
+
+.section--projects,
+.section--contact {
+    background-color: var(--secondary-bg-color);
+    color: var(--secondary-text-color);
+}
+
+.section--projects,
+.section--about,
+.section--contact {
+    padding: 3em 2em;
+}
+
+.section__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 0 0 1em;
+}
+
+.section__title_divider {
+    width: 2em;
+    height: 3px;
+    border: none;
+    border-radius: 8px;
+    margin-bottom: 4em;
+}
+
+.section--intro .section__title_divider,
+.section--about .section__title_divider {
+    background-color: var(--main-text-color);
+}
+
+.section--projects .section__title_divider,
+.section--contact .section__title_divider {
+    background-color: var(--secondary-text-color);
+}
+/* end of section section */
+
+
+
+/******** 
+CONTAINER
+********/
+.container {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.container--intro {
+    display: grid;
+    align-items: center;
+    gap: .5em;
+}
+/* end of container section */
+
+
+
+/***
+NAME
+***/
+.name {
+    position: relative;
+    white-space: nowrap;
+    margin: 0;
+    letter-spacing: 1px;
+    font-size: 1.5em;
+    min-width: max-content;
+}
+
+.name__text {
+    position: relative;
+    z-index: 2;
+}
+
+.name__text--color {
+    position: absolute;
+    color: var(--secondary-bg-color);
+    left: .075em;
+    z-index: 1;
+}
+/* end of name section */
+
+
+
+/****************
+DOTS / NAVIGATION
+****************/
+.dots {
+    margin: 0 auto;
+    min-width: min-content;
+    width: 100%;
+}
+
+.dots__row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    margin: -15px auto 0;
+}
+
+.dots__row--1 {
+    margin-top: 0;
+}
+
+.dots__row--2 {
+    max-width: 95%;
+}
+
+.dot {
+    background: var(--main-bg-color);
+    color: var(--main-text-color);
+    border: 2px solid var(--secondary-bg-color);
+    border-radius: 50%;
+    box-shadow: 0px 0px 5px var(--dot-shadow);
+}
+
+.dot--s {
+    height: 2.5vw;
+    width: 2.5vw;
+    max-height: 25px;
+    max-width: 25px;
+}
+
+.dot--m {
+    height: 7.5vw;
+    width: 7.5vw;
+    max-height: 80px;
+    max-width: 80px;
+}
+
+.dot--l {
+    height: 20vw;
+    width: 20vw;
+    min-height: 80px;
+    min-width: 80px;
+    max-height: 160px;
+    max-width: 160px;
+}
+
+.dot__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    background-color: inherit;
+    color: inherit;
+    border: none;
+    border-radius: 50%;
+    font-size: .875rem;
+    font-weight: 600;
+    padding: 1em 2em;
+    letter-spacing: 1.2px;
+    text-decoration: none;
+}
+
+.dot__link:hover,
+.dot__link:focus {
+    cursor: pointer;
+    transform: scale(115%);
+    box-shadow: 0px 0px 5px var(--dot-shadow--hover);
+}
+/* end of dots / navigation section */
+
+
+
+/*******
+PROJECTS
+*******/
+.project {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 4em;
+}
+
+.project:last-of-type {
+    margin-bottom: 0;
+}
+
+.project__img {
+    height: 40vw;
+    max-height: 350px;
+    width: 100%;
+    box-shadow: 0px 0px 5px var(--main-text-color);
+    border-radius: 8px;
+    object-fit: cover;
+    object-position: top;
+}
+
+.project__title {
+    letter-spacing: .5px;
+    margin-top: 1.5em;
+}
+
+.project__link {
+    display: inline-block;
+    min-width: 120px;
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    border: none;
+    border-radius: 8px;
+    font-size: .875rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    padding: 1em 2em;
+    margin: 2em 1em 0;
+    text-decoration: none;
+    text-align: center;
+}
+
+.project__link:hover,
+.project__link:focus {
+    cursor: pointer;
+    transform: scale(110%);
+    box-shadow: 0px 0px 5px var(--dot-shadow--hover);
+}
+/* end of projects section */
+
+
+
+/**********
+BIO / ABOUT
+**********/
+.bio {
+    display: grid;
+    gap: 1em;
+    justify-items: center;
+}
+
+.bio__education {
+    justify-self: left;
+}
+
+.bio__img {
+    height: 40vw;
+    min-height: 200px;
+    max-height: 300px;
+}
+
+.list_title {
+    letter-spacing: 1.5px;
+    font-size: 1.125rem;
+}
+
+.list {
+    margin: 0 auto;
+}
+
+.list--toolkit {
+    list-style: none;
+}
+
+.list__item {
+    line-height: 1.6;
+    letter-spacing: .5px;
+}
+
+.list--toolkit {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 0;
+}
+
+.list__item--toolkit {
+    color: var(--main-text-color);
+    font-size: .875rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: .875em 5%;
+    padding: .5em 0;
+    border-radius: 5px;
+}
+
+.list__item--education {
+    margin-bottom: .5em;
+}
+
+.list__item--education:last-of-type {
+    margin-bottom: 0;
+}
+
+.toolkit_icon {
+    width: 50px;
+    max-width: 80px;
+    height: 50px;
+    max-height: 80px;
+}
+
+.toolkit_label {
+    display: block;
+    padding-top: .75em;
+}
+/* end of bio / about section */
+
+
+
+/******
+CONTACT
+******/
+.contact__content {
+    display: grid;
+    gap: 2em;
+}
+
+.contact__socials {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.social_icon {
+    width: 50px;
+    max-width: 80px;
+    height: 50px;
+    max-height: 80px;
+}
+
+.social_icon--circular {
+    border-radius: 50%;
+}
+
+.social_icon:hover,
+.social_icon:focus {
+    cursor: pointer;
+    transform: scale(115%);
+    box-shadow: 0px 0px 5px var(--dot-shadow--hover);
+}
+
+.contact__form {
+    display: grid;
+    gap: 1em;
+}
+
+.contact__input {
+    padding: .75em;
+    font-size: .875rem;
+    letter-spacing: .5px;
+}
+
+.contact__btn {
+    background-color: var(--main-bg-color);
+    color: var(--main-text-color);
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    padding: 1em 2em;
+    margin-top: 2em;
+    width: 100%;
+    justify-self: center;
+}
+
+.contact__btn:hover,
+.contact__btn:focus {
+    cursor: pointer;
+    transform: scale(105%);
+    box-shadow: 0px 0px 5px var(--dot-shadow--hover);
+}
+
+.contact__sent_text {
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+/* end of contact section */
+
+
+
+/************
+MEDIA QUERIES
+************/
+@media (max-width: 767px) {
+    .dots {
+        margin-top: .25em;
+    }
+}
+
+@media (min-width: 768px) {
+    /****** 
+    SECTION
+    ******/
+    .section--intro {
+        padding: 4em 1em;
+    }
+    /* end of section section */
+
+
+
+    /******** 
+    CONTAINER
+    ********/
+    .container--intro {
+        grid-template-columns: minmax(min-content, 1fr) minmax(40%, 650px);
+        gap: 1em;
+    }
+    /* end of container section */
+    
+
+
+    /****************
+    DOTS / NAVIGATION
+    ****************/
+    .dot--m {
+        height: 5vw;
+        width: 5vw;
+        max-height: 60px;
+        max-width: 60px;
+    }
+
+    .dot--l {
+        height: 15vw;
+        width: 15vw;
+    }
+    /* end of dots / navigation section */
+
+
+
+    /*******
+    PROJECTS
+    *******/
+    .project {
+        gap: 2.5em;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+        text-align: left;
+    }
+
+    .project:nth-child(2n) .project__info {
+        order: 1;
+        text-align: right;
+    }
+
+    .project:nth-child(2n) .project__img {
+        order: 2;
+        max-width: 100%;
+    }
+
+    .project__img {
+        height: auto;
+    }
+
+    .project__title {
+        margin-top: 0;
+    }
+
+    .project__link:first-of-type {
+        margin-left: 0;
+    }
+
+    .project__link:last-of-type {
+        margin-right: 0;
+    }
+    /* end of projects section */
+
+
+
+    /**********
+    BIO / ABOUT
+    **********/
+    .bio {
+        grid-template-columns: 1fr max-content;
+        grid-template-areas: 
+            "body img"
+            "education img";
+        gap: 2em;
+    }
+
+    .bio__body {
+        grid-area: body;
+    }
+
+    .bio__education {
+        grid-area: education;
+    }
+
+    .bio__img {
+        grid-area: img;
+        height: 35vw;
+        width: 35vw;
+        max-width: 350px;
+        max-height: 350px;
+    }
+
+    .list--toolkit {
+        padding-right: 1em;
+    }
+    /* end of bio / about section */
+
+    
+
+    /******
+    CONTACT
+    ******/
+    .contact__content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "text form"
+            "socials form";
+    }
+
+    .contact__text {
+        grid-area: text;
+    }
+
+    .contact__form {
+        grid-area: form;
+    }
+
+    .contact__socials {
+        grid-area: socials;
+        padding-top: 1em;
+    }
+
+    .contact__btn {
+        justify-self: auto;
+    }
+
+    .contact__sent_text {
+        grid-area: form;
+    }
+    /* end of contact section */
+}
