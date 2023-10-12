@@ -355,6 +355,10 @@ BIO / ABOUT
     margin-bottom: 0;
 }
 
+.education-source {
+    font-style: italic;
+}
+
 .toolkit-icon {
     width: 50px;
     max-width: 80px;
